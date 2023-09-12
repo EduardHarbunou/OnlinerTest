@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Browser {
     public static WebDriver driver;
+    System.out.println("Hello World!");
 
     public void driverInit() {
         WebDriverManager.chromedriver().setup();
@@ -33,5 +34,4 @@ public class Browser {
     public void closeDriver() {
         driver.quit();
     }
-
 }
