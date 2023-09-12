@@ -2,6 +2,7 @@ package pages;
 
 import browser.Browser;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -28,28 +29,24 @@ public class TVPage extends Browser {
     }
 
     public void searchAndClickSize(String value) {
-        Actions actions = new Actions(driver);
+//        Actions actions = new Actions(driver);
         WebElement clickRazr = driver.findElement(By.xpath(String.format(razreshenie, value)));
-        actions.moveToElement(clickRazr).click().perform();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", clickRazr);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickRazr);
+//        actions.moveToElement(clickRazr).click().build().perform();
     }
 
     public void searchAndClickMinDiagonal(String value) {
-        Actions actions = new Actions(driver);
+//        Actions actions = new Actions(driver);
         WebElement cklickMinRazr = driver.findElement(By.xpath(String.format(diagonalMin, value)));
-        actions.moveToElement(cklickMinRazr).click().perform();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cklickMinRazr);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", cklickMinRazr);
+//        actions.moveToElement(cklickMinRazr).click().build().perform();
     }
 
     public void searchAndClickMaxDiagonal(String value) {
         Actions actions = new Actions(driver);
         WebElement cklickRazr = driver.findElement(By.xpath(String.format(diagonalMax, value)));
-        actions.moveToElement(cklickRazr).click().perform();
+        actions.moveToElement(cklickRazr).click().build().perform();
     }
-
-
-
-
-
-
-
-
 }
