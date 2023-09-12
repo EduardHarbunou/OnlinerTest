@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Browser {
     public static WebDriver driver;
+    System.out.println("Hello Slave!");
 
     public void driverInit() {
         WebDriverManager.chromedriver().setup();
